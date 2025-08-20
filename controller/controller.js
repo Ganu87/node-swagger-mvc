@@ -6,6 +6,10 @@ let users = [
   { id: 1, name: "John Doe" },
   { id: 2, name: "Jane Smith" }
 ];
+let products = [
+  { id: 1, name: "Mobile" },
+  { id: 2, name: "Laptop" }
+];
 
 
 async function getAllUsers(req,res) {
@@ -21,6 +25,19 @@ async function getUserById(req,res) {
   }
 }
 
+async function getAllProducts(req,res) {
+    res.json(products);
+}
+
+async function getProductById(req,res) {
+    const product = products.find(u => u.id === parseInt(req.params.id));
+  if (product) {
+    res.json(product);
+  } else {
+    res.status(404).json({ message: "product not found" });
+  }
+}
+
 module.exports={
-    getUserById,getAllUsers
+    getUserById,getAllUsers,getProductById,getAllProducts
 }

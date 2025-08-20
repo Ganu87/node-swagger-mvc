@@ -22,6 +22,7 @@
             "type": "string"
           }
         ],
+         "tags": ["Users"],
         "responses": {
           "200": {
             "description": "OK"
@@ -35,6 +36,40 @@
     "/users": {
       "get": {
         "description": "",
+         "tags": ["Users"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/product/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+         "tags": ["Product"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/product": {
+      "get": {
+        "description": "",
+        "tags": ["Product"],
         "responses": {
           "200": {
             "description": "OK"

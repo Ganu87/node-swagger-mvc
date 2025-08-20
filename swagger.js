@@ -10,6 +10,6 @@ const doc = {
 };
 
 const outputFile = './swagger-output.json'; // Swagger JSON file will be generated here
-const endpointsFiles = ['./routes/routes.js']; // Path to the app or routes file
+const endpointsFiles = ['./routes/routes.js','./routes/product.js']; // Path to the app or routes file
 
 swaggerAutogen(outputFile, endpointsFiles, doc);
